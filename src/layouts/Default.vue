@@ -11,7 +11,9 @@
           aria-label="Menu"
         />
 
-        <q-toolbar-title>Quasar App</q-toolbar-title>
+        <q-toolbar-title>
+          
+        </q-toolbar-title>
 
         <div>
           <q-icon size="sm" name="more_vert" />
@@ -24,7 +26,24 @@
         class="nav-h mt-150"
       >
         <q-list padding>
-          <q-item :to="{ name: 'profile' }" clickable v-ripple>
+          <q-item to="/" clickable v-ripple
+            :active="link === 'dahboard'"
+            @click="link = 'dahboard'"
+            active-class="active-link"
+          >
+            <q-item-section avatar>
+              <q-icon name="inbox" />
+            </q-item-section>
+
+            <q-item-section>
+              Dashboard
+            </q-item-section>
+          </q-item>
+          <q-item to="/profile" clickable v-ripple
+            :active="link === 'profile'"
+            @click="link = 'profile'"
+            active-class="active-link"
+          >
             <q-item-section avatar>
               <q-icon name="account_circle" />
             </q-item-section>
@@ -34,7 +53,11 @@
             </q-item-section>
           </q-item>
 
-          <q-item :to="{ name: 'integration' }" clickable v-ripple>
+          <q-item to="/integration" clickable v-ripple
+            :active="link === 'integration'"
+            @click="link = 'integration'"
+            active-class="active-link"
+          >
             <q-item-section avatar>
               <q-icon name="build" />
             </q-item-section>
@@ -72,7 +95,8 @@ export default {
   data() {
     return {
       background: require('../assets/material.png'),
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      link: 'dashboard'
     };
   }
 };

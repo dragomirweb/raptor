@@ -2,26 +2,35 @@
 const routes = [
   {
     path: '/',
-    name: 'base',
     component: () => import('layouts/Default.vue'),
     children: [
-      { path: '', component: () => import('pages/Dashboard.vue') }
-    ]
+    { 
+      path: '',
+      name: 'dashboard', 
+      component: () => import('pages/Dashboard.vue') 
+    }
+  ]
   },
   {
     path: '/profile',
-    name: 'profile',
     component: () => import('layouts/Default.vue'),
     children: [
-      { path: '', component: () => import('pages/Profile.vue') }
+      { 
+        path: '',
+        name: 'profile', 
+        component: () => import('pages/Profile.vue') 
+      }
     ]
   },
   {
     path: '/integration',
-    name: 'integration',
     component: () => import('layouts/Default.vue'),
     children: [
-      { path: '', component: () => import('pages/Integration.vue') }
+      { 
+        path: '', 
+        name: 'integration',
+        component: () => import('pages/Integration.vue') 
+      }
     ]
   }
 ]
