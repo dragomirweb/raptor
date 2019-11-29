@@ -4,7 +4,21 @@ const routes = [
     path: '/',
     component: () => import('layouts/Default.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '', component: () => import('pages/Dashboard.vue') }
+    ]
+  },
+  {
+    path: '/profile',
+    component: () => import('layouts/Default.vue'),
+    children: [
+      { path: '', component: () => import('pages/Profile.vue') }
+    ]
+  },
+  {
+    path: '/integration',
+    component: () => import('layouts/Default.vue'),
+    children: [
+      { path: '', component: () => import('pages/Integration.vue') }
     ]
   }
 ]
