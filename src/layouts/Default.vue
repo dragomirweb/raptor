@@ -11,77 +11,47 @@
           aria-label="Menu"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title>Quasar App</q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-2"
-    >
-      <q-list>
-        <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="school" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="code" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="chat" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="record_voice_over" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://twitter.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="rss_feed" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://facebook.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="public" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Facebook</q-item-label>
-            <q-item-label caption>@QuasarFramework</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-2">
+      <q-scroll-area
+        class="nav-h mt-150"
+      >
+        <q-list padding>
+          <q-item clickable v-ripple>
+            <q-item-section avatar>
+              <q-icon name="account_circle" />
+            </q-item-section>
+
+            <q-item-section>Profile</q-item-section>
+          </q-item>
+
+          <q-item clickable v-ripple>
+            <q-item-section avatar>
+              <q-icon name="build" />
+            </q-item-section>
+
+            <q-item-section>Integrations</q-item-section>
+          </q-item>
+        </q-list>
+      </q-scroll-area>
+
+      <q-img
+        class="absolute-top h-150"
+        :src="background"
+      >
+        <div class="absolute-bottom bg-transparent">
+          <q-avatar size="80px" class="q-mb-sm">
+            <img src="~assets/giphy.gif" />
+          </q-avatar>
+          <div class="text-weight-bold">Tyrannosaurus Rex</div>
+          <div>@treeex2201</div>
+        </div>
+      </q-img>
     </q-drawer>
 
     <q-page-container>
@@ -91,13 +61,15 @@
 </template>
 
 <script>
-export default {
-  name: 'Default',
 
-  data () {
+export default {
+  name: "Default",
+
+  data() {
     return {
+      background: require('../assets/material.png'),
       leftDrawerOpen: false
-    }
+    };
   }
-}
+};
 </script>
