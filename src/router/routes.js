@@ -2,6 +2,7 @@
 const routes = [
   {
     path: '/',
+    name: 'base',
     component: () => import('layouts/Default.vue'),
     children: [
       { path: '', component: () => import('pages/Dashboard.vue') }
@@ -9,6 +10,7 @@ const routes = [
   },
   {
     path: '/profile',
+    name: 'profile',
     component: () => import('layouts/Default.vue'),
     children: [
       { path: '', component: () => import('pages/Profile.vue') }
@@ -16,6 +18,7 @@ const routes = [
   },
   {
     path: '/integration',
+    name: 'integration',
     component: () => import('layouts/Default.vue'),
     children: [
       { path: '', component: () => import('pages/Integration.vue') }
