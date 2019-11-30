@@ -12,7 +12,9 @@
         />
 
         <q-toolbar-title>
-          
+          <span class="text-capitalize">
+            {{ currentPath }}
+          </span>
         </q-toolbar-title>
 
         <div>
@@ -97,7 +99,12 @@ export default {
       background: require('../assets/material.png'),
       leftDrawerOpen: false,
       link: 'dashboard'
-    };
+    }
+  },
+  computed: {
+    currentPath() {
+        return this.$route.name;
+    }
   }
 };
 </script>
