@@ -1,6 +1,9 @@
 # raptordev (raptor)
 
-Raptor integration
+Raptor integration using quasar framerwork ( vue, material design)
+
+[demo](https://dragomirweb.com/raptor/)
+[data feed url](https://my-json-server.typicode.com/dragomirweb/mockserver/db)
 
 ## Install the dependencies
 ```bash
@@ -18,5 +21,9 @@ quasar dev
 quasar build
 ```
 
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+### Info
+
+SPA using vue, vuex
+Integrations are stored in a vuex store
+Data is mapped according to the spec.
+Known Bugs** Drag and stop sometimes bugs out when dropping on parent
